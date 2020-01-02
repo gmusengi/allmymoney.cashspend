@@ -3,8 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>8179a887-6daf-4a4a-8828-9051dbc9fe2e</UserSecretsId>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
-    <DockerfileTag>allmymoney:dev</DockerfileTag>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>

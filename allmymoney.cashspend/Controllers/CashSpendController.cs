@@ -33,11 +33,11 @@ namespace allmymoney.cashspend.Controllers
             {
                 using (var channel = connection.CreateModel())
                 {
-                    string exchange = "spendexchange";
-                    string routekey = "spend.cash";
+                    string exchange = "expenditureexchange";
+                    string routekey = "expenditure.cash";
                     channel.ExchangeDeclare(exchange, ExchangeType.Topic, true, false, null);
-                    channel.QueueBind(channel.QueueDeclare("spend", true, false, false, null).QueueName, exchange, routekey, null);
-                    byte[] body = Encoding.UTF8.GetBytes($"Cash spend: {JsonConvert.SerializeObject(entry)}");
+                    channel.QueueBind(channel.QueueDeclare("expenditure", true, false, false, null).QueueName, exchange, routekey, null);
+                    byte[] body = Encoding.UTF8.GetBytes($"Cash expenditure: {JsonConvert.SerializeObject(entry)}");
                     channel.BasicPublish(exchange, routekey, null, body);
                 }
             }
